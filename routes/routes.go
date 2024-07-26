@@ -2,7 +2,7 @@ package routes
 
 import "github.com/gofiber/fiber/v2"
 
-func ConfigureRoutes(app *fiber.App) {
+func LoadRoutes(app *fiber.App) {
 	api := app.Group("api/v1")
 	api.Get("/", healthCheck)
 }
