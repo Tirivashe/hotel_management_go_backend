@@ -8,6 +8,7 @@ import (
 
 func init() {
 	initializers.LoadEnvVariables()
+	initializers.ConnectToDb()
 }
 
 func main() {
@@ -15,5 +16,4 @@ func main() {
 	if err := server.Start(); err != nil {
 		log.Fatal("Cannot start server")
 	}
-	println("Hello, world!")
 }
