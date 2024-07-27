@@ -14,6 +14,8 @@ func init() {
 func main() {
 	server := NewApiServer(":8000")
 	if err := server.Start(); err != nil {
-		log.Fatal("Cannot start server")
+		log.Fatal("Cannot start server: ", err)
 	}
+
+	defer initializers.CloseDbConnection()
 }

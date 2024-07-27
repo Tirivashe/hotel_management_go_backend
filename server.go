@@ -12,7 +12,6 @@ type ApiServer struct {
 
 func NewApiServer(port string) *ApiServer {
 	mux := fiber.New()
-	// add routes and other configurations here
 	routes.LoadRoutes(mux)
 	return &ApiServer{
 		mux:  mux,

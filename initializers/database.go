@@ -20,6 +20,19 @@ func ConnectToDb() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	err = db.Ping()
+	if err != nil {
+		log.Fatal("Cannot connect to the db, ", err)
+	}
+
 	log.Println("Connected to the database!")
 	DB = db
+}
+
+func CloseDbConnection() {
+	err := DB.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
